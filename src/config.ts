@@ -11,6 +11,9 @@ class Config {
   public CLIENT_URL: string | undefined;
   public EC2_URL: string | undefined;
   public PORT: string | number;
+  public AWS_REGION:string |undefined
+  public AWS_ACCESS_KEY_ID:string |undefined
+  public AWS_SECRET_ACCESS_KEY:string |undefined
 
   constructor() {
     this.JWT_TOKEN = process.env.JWT_TOKEN || '1234';
@@ -20,6 +23,9 @@ class Config {
     this.CLIENT_URL = process.env.CLIENT_URL || '';
     this.EC2_URL = process.env.EC2_URL || '';
     this.PORT = process.env.PORT || '';
+    this.AWS_REGION = process.env.AWS_REGION || ''
+    this.AWS_ACCESS_KEY_ID = process.env.AWS_ACCESS_KEY_ID || ''
+    this.AWS_SECRET_ACCESS_KEY = process.env.AWS_SECRET_ACCESS_KEY || ''
   }
 
   public createLogger(name: string): bunyan {
